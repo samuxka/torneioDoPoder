@@ -1,36 +1,35 @@
 def choiceHero():
     print("Escolha seu heroi:")
-    print("1. K'sante - Tanque/Lutador")
-    print("2. Sion - Tanque")
-    print("3. Lee Sin - Lutador")
+    print("1. K'sante - Tanque/Lutador 🛡️🥊")
+    print("2. Sion - Tanque 🛡️")
+    print("3. Lee Sin - Lutador 🥊")
     print("4. Veigar - Mago 🔮")
     print("5. Ashe - Atirador 🏹")
-    print("6. Akali - Mago Assassino 🧙‍♀️🗡")
+    print("6. Akali - Mago Assassino 🔮🗡️")
     
     escolha = int(input("Digite o número da classe escolhida: "))
     
     if escolha == 1:
-        return "K'sante", 610, 37, 32, 66, 0
+        return "K'sante 🛡️🥊", 610, 37, 32, 66, 0
     elif escolha == 2:
-        return "Sion", 545, 32, 32, 68, 0
+        return "Sion 🛡️", 545, 32, 32, 68, 0
     elif escolha == 3:
-        return "Lee Sin", 575, 36, 32, 70, 0
+        return "Lee Sin 🥊", 575, 36, 32, 70, 0
     elif escolha == 4:
-        return "Veigar", 575, 23, 32, 52, 55
+        return "Veigar 🔮", 575, 23, 32, 52, 55
     elif escolha == 5:
-        return "Ashe", 570, 26, 30, 59, 0
+        return "Ashe 🏹", 570, 26, 30, 59, 0
     elif escolha == 6:
-        return "Akali", 570, 23, 37, 62, 50
+        return "Akali 🔮🗡️", 570, 23, 37, 62, 50
     else:
         print("Escolha inválida!")
         return choiceHero()
 
 class hero:
-    def __init__(self, name, hero, life, shild, magicResistance, fisicDamage, magicDamage):
-        self.name = name
+    def __init__(self, hero, life, shield, magicResistance, fisicDamage, magicDamage):
         self.hero = hero
         self.life = life
-        self.shild = shild
+        self.shield = shield
         self.magicResistance = magicResistance
         self.fisicDamage = fisicDamage
         self.magicDamage = magicDamage

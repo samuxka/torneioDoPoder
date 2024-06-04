@@ -9,7 +9,7 @@ def welcomeToGame():
     print("Esta preparado para o que esta te esperando????")
     preparado=input("Esta preparado? \ny/n: ")
     if preparado == "y":
-        print("Prefeito vamos começar a jogar! Chame um amigo para batalhar com voce")
+        print("Prefeito vamos começar a jogar! Chame um amigo para batalhar com voce\n")
     elif preparado == "n":
         print("Nao esta preparado ainda???? Entao prepare-se para a batalha!!!!\n")
         return welcomeToGame()
@@ -17,14 +17,16 @@ def welcomeToGame():
         print("Opcao invalida!!\n")
         return welcomeToGame()
 
-def championSelectPlayer():
+def championSelectPlayer1():
     player1 = input("Como se chama campeao: ")
     selectHero = choiceHero()
-    print(f"O campeao escolhido por {player1} foi {selectHero[0]}\n")
-    print("==============================")
-    player2 = input("Como se chama campeao2: ")
+    print(f"Otima escolha {player1}, o campeao escolhido foi {selectHero[0]}\n")
+    
+def championSelectPlayer2():
+    player2 = input("Como se chama campeao: ")
     selectHero = choiceHero()
-    print(f"O campeao escolhido por {player2} foi {selectHero[0]}\n")
+    print(f"Otima escolha {player2}, o campeao escolhido foi {selectHero[0]}\n")
+
 
 def evenOrOdd():
     print(f"Escolha, Par ou impar?")
@@ -32,14 +34,22 @@ def evenOrOdd():
     print("2. Par")
     escolha = int(input("Digite sua escolha: "))
     if escolha == 1:
-        return "Impar"
+        escolhaJogador1 = "impar"
+        escolhaJogador2 = "par"
     elif escolha == 2:
-        return "Par"
+        escolhaJogador1 = "par"
+        escolhaJogador2 = "impar"
     else:
         print("Opcao invalida!!!")
         return evenOrOdd()
 
-welcomeToGame()
-championSelectPlayer()
-evenOrOdd()
-print(f"O numero escolhido foi {evenOrOdd}")
+    diceResultPlayer1 = random.randint(0, 6)
+    diceResultPlayer2 = random.randint(0, 6)
+    
+    print(f"O jogador {player1.player1}")
+
+if __name__ == "__main__":
+    welcomeToGame()
+    player1 = championSelectPlayer1()
+    player2 = championSelectPlayer2()
+    evenOrOdd()
