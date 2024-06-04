@@ -19,7 +19,7 @@ def combat(jogadorAtacante, jogadorDefensor):
         chosenAttack = int(input("Digite sua escolha de ataque: "))
         ataque = ataques[chosenAttack - 1]
 
-        print(f"{jogadorAtacante.nome} escolheu atacar {jogadorDefensor.nome} com {ataque['nome']}")
+        print(f"{jogadorAtacante.nome} escolheu atacar {jogadorDefensor.nome} com {ataque['nome']}\n")
         print("Selecione sua defesa:")
         print("1-Fugir")
         print("2-Defender")
