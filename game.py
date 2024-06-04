@@ -1,8 +1,6 @@
-# Import area - start
 import random
-from src.utils.heros import choiceHero, hero
-from src.utils.combat import combat
-# Import area - end
+from heros import choiceHero, Hero
+from combat import calculateDamage, combat
 
 def welcomeToGame():
     print("BEM-VINDO AO TORNEIO DO PODER!!! 🤼‍♂️🥊🏆")
@@ -18,10 +16,9 @@ def welcomeToGame():
         return welcomeToGame()
 
 def championSelectPlayer(player_num):
-    nome = input(f"Como se chama o campeão {player_num}: ")
-    selectHero = choiceHero()
-    print(f"Ótima escolha {nome}, o campeão escolhido foi {selectHero[0]}\n")
-    return {"nome": nome, "heroi": selectHero[0]}
+    nome, life, shield, magicResistance, fisicDamage, magicDamage = choiceHero()
+    print(f"Ótima escolha, o campeão escolhido foi {nome}\n")
+    return Hero(nome, life, shield, magicResistance, fisicDamage, magicDamage)
 
 def evenOrOdd(jogador1, jogador2):
     print("Escolha, Par ou Ímpar?")
@@ -38,14 +35,14 @@ def evenOrOdd(jogador1, jogador2):
 
     diceResult = random.randint(1, 6)
 
-    print(f"O jogador {jogador1['nome']} escolheu {escolhaJogador1}")
+    print(f"O jogador {jogador1.nome} escolheu {escolhaJogador1}")
     print(f"Resultado do dado: {diceResult}")
 
     if (diceResult % 2 == 0 and escolhaJogador1 == "par") or (diceResult % 2 != 0 and escolhaJogador1 == "ímpar"):
-        print(f"{jogador1['nome']} começa atacando")
+        print(f"{jogador1.nome} começa atacando\n")
         return jogador1, jogador2
     else:
-        print(f"{jogador2['nome']} começa atacando")
+        print(f"{jogador2.nome} começa atacando\n")
         return jogador2, jogador1
 
 if __name__ == "__main__":
@@ -53,4 +50,4 @@ if __name__ == "__main__":
     jogador1 = championSelectPlayer(1)
     jogador2 = championSelectPlayer(2)
     jogadorAtacante, jogadorDefensor = evenOrOdd(jogador1, jogador2)
-    # A partir daqui, você pode continuar com a lógica de combate entre `jogador_atacante` e `jogador_defensor`
+    combat(jogadorAtacante, jogadorDefensor)
