@@ -1,11 +1,11 @@
 def choiceHero():
     print("Escolha seu heroi:")
-    print("1. K'sante")
-    print("2. Sion")
-    print("3. Lee Sin")
-    print("4. Veigar")
-    print("5. Ashe")
-    print("6. Akali")
+    print("1. K'sante - Tanque/Lutador")
+    print("2. Sion - Tanque")
+    print("3. Lee Sin - Lutador")
+    print("4. Veigar - Mago 🔮")
+    print("5. Ashe - Atirador 🏹")
+    print("6. Akali - Mago Assassino 🧙‍♀️🗡")
     
     escolha = int(input("Digite o número da classe escolhida: "))
     
