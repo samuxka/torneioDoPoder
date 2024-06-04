@@ -45,10 +45,4 @@
             </div>
         </div>
     </section>
-    <section class="mechanics">
-        <header>
-            <h1 style="text-align:center;font-weight:800;font-family:Montserrat">Como Jogar</h1>
-        <header>
-        .
-    </section>
 </body>
